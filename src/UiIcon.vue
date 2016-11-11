@@ -2,6 +2,7 @@
     <i
         class="ui-icon material-icons" :class="[icon]" v-text="removeText ? null : icon"
         aria-hidden="true"
+        @click="onClick"
     ></i>
 </template>
 
@@ -17,6 +18,12 @@ export default {
         removeText: {
             type: Boolean,
             default: false
+        }
+    },
+
+    methods: {
+        onClick() {
+            this.$emit('click')
         }
     }
 };
